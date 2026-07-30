@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>彩票开奖数据中心</title>
+  <style>
+:root{--page:#f5f7fb;--card:#fff;--ink:#1f2937;--muted:#667085;--line:#e4e7ec;--warm:#f26b35;--warm-mid:#ff9a4d;--warm-soft:#ffd5c2;--cool:#2f8fe8;--cool-mid:#6ab5ff;--cool-soft:#d9ecff;--neutral:#d9e0ea;--green:#14835b;--shadow:0 20px 48px rgba(31,41,55,.08)}
+*{box-sizing:border-box}body{margin:0;background:var(--page);color:var(--ink);font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}.page{max-width:1240px;margin:0 auto;padding:24px}.home-hero{display:grid;grid-template-columns:1.05fr .95fr;gap:16px}.hero-main,.panel,.sync-panel{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:20px;box-shadow:var(--shadow)}.hero-main{background:linear-gradient(135deg,#fff3ec,#eef6ff)}.hero-title,.panel-title,.detail-title,.lottery-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap}h1{margin:0 0 8px;font-size:36px;letter-spacing:-.04em}h2,h3,p{margin:0}.muted,small{color:var(--muted)}.badge,.nav-pill{border:1px solid var(--line);border-radius:999px;padding:7px 12px;background:#f8fafc}.ok{color:var(--green);font-weight:700}.search-row{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:18px}input,textarea,select{width:100%;border:1px solid var(--line);border-radius:16px;padding:12px 14px;background:#fff;color:var(--ink)}textarea{min-height:112px;resize:vertical}.btn{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:10px 16px;cursor:pointer}.btn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}.status-list{display:grid;gap:10px;margin-top:12px}.status-row{display:flex;justify-content:space-between;gap:14px;border-bottom:1px dashed var(--line);padding-bottom:9px}.status-row:last-child{border-bottom:0}.source-row{margin-top:10px}.lottery-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px;margin:18px 0}.lottery-card{min-height:164px;display:grid;gap:9px;text-align:left;border:1px solid var(--line);border-radius:22px;padding:14px;background:#fff;transition:.16s ease}.lottery-card:hover{transform:translateY(-2px);border-color:#98a2b3}.lottery-card strong{font-size:18px}.lottery-card small{white-space:nowrap}.lottery-meta{color:var(--muted);font-size:13px;border-top:1px dashed var(--line);padding-top:8px}.balls{display:flex;flex-wrap:wrap;gap:5px;align-items:center}.ball,.mini-ball{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;font-weight:700;font-variant-numeric:tabular-nums}.ball{width:32px;height:32px}.mini-ball{width:30px;height:30px}.warm{background:linear-gradient(145deg,var(--warm-mid),var(--warm));color:#fff8f2}.cool{background:linear-gradient(145deg,var(--cool-mid),var(--cool));color:#eef7ff}.neutral{background:linear-gradient(145deg,#eef1f6,var(--neutral));color:#344054}.notice{border:1px solid #f0d7ad;border-radius:20px;padding:16px;background:#fff8ed}.detail-hero{display:grid;gap:14px;margin-bottom:16px}.back-link{color:var(--muted)}.nav-row{display:flex;flex-wrap:wrap;gap:8px}.nav-pill.active{background:var(--ink);color:#fff;border-color:var(--ink)}.detail-layout{display:grid;grid-template-columns:300px 1fr;gap:16px;align-items:start}.left-panel,.right-panel{display:grid;gap:16px}.latest-balls{margin:12px 0}.quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.quick-grid a{border:1px solid var(--line);border-radius:14px;padding:10px;text-align:center;background:#fbfcff}.summary-grid,.feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.summary-card,.feature,.mini-panel{border:1px solid var(--line);border-radius:18px;padding:14px;background:#fbfcff}.summary-card strong{display:block;font-size:26px}.summary-card span{color:var(--muted)}.summary-text{margin-top:12px}.checker-help,.trend-note{border:1px solid var(--line);border-radius:18px;padding:14px;background:#fbfcff;margin-bottom:14px}.checker-help p,.trend-note p{margin-top:6px}.trend-metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:0 0 10px}.trend-metrics div{border:1px solid var(--line);border-radius:16px;padding:10px 12px;background:#fff}.trend-metrics strong{display:block;font-size:22px}.trend-metrics span{color:var(--muted);font-size:13px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.batch-label{display:block;margin-top:14px}.result{margin-top:12px;border:1px solid var(--line);border-radius:16px;padding:12px;background:#f8fafc;white-space:pre-wrap}.freq-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.freq-list{display:grid;gap:8px;margin-top:12px}.freq-row{display:grid;grid-template-columns:36px 1fr 58px 36px;gap:8px;align-items:center}.track{height:10px;border-radius:999px;background:#edf0f5;overflow:hidden}.fill{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--warm-soft),var(--warm))}.cool-fill{background:linear-gradient(90deg,var(--cool-soft),var(--cool))}.trend-svg{width:100%;height:auto;display:block}.grid-line{stroke:#e4e7ec;stroke-width:1}.axis{fill:#667085;font-size:12px}.trend-line{fill:none;stroke:var(--warm);stroke-width:3}.trend-dot{fill:var(--cool)}.avg-line{stroke:#98a2b3;stroke-dasharray:6 6}.year-tools{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 12px}.year-tools label{display:flex;align-items:center;gap:8px}.year-tools select{width:auto;min-width:130px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse}th,td{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left;vertical-align:middle}th{color:var(--muted)}
+@media(max-width:1100px){.home-hero,.detail-layout{grid-template-columns:1fr}.lottery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.trend-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:720px){.page{padding:14px}h1{font-size:28px}.lottery-grid,.summary-grid,.feature-grid,.freq-grid,.form-grid,.search-row,.trend-metrics{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+  <div class="page">
+        <header class="home-hero">
+          <section class="hero-main">
+            <div class="hero-title">
+              <div>
+                <h1>彩票开奖数据中心</h1>
+                <p class="muted">公开开奖记录查询、中奖核验、号码统计和同步说明。选择一个彩种，进入它的独立详情页。</p>
+              </div>
+              <span class="badge">官方数据 · 自动同步 · 合规展示</span>
+            </div>
+            <div class="search-row">
+              <input id="homeSearch" type="search" placeholder="输入彩种名、期号、日期或完整号码，例如：大乐透 26084">
+              <button class="btn primary" id="homeSearchBtn" type="button">进入查询</button>
+            </div>
+          </section>
+          <aside class="panel sync-panel">
+            <div class="panel-title"><h2>同步与来源</h2><span class="ok">自动检查</span></div>
+            <div class="status-list"><div class="status-row"><span>双色球</span><strong>已同步到 2026-07-28 第 26086 期</strong></div><div class="status-row"><span>大乐透</span><strong>已同步到 2026-07-27 第 26084 期</strong></div><div class="status-row"><span>福彩3D</span><strong>已同步到 2026-07-28 第 26199 期</strong></div><div class="status-row"><span>排列3</span><strong>已同步到 2026-07-28 第 26199 期</strong></div><div class="status-row"><span>排列5</span><strong>已同步到 2026-07-28 第 26199 期</strong></div><div class="status-row"><span>七星彩</span><strong>已同步到 2026-07-28 第 26086 期</strong></div><div class="status-row"><span>七乐彩</span><strong>已同步到 2026-07-27 第 26085 期</strong></div></div>
+            <div class="status-row source-row"><span>官方来源</span><strong>中国福彩网 / 中国体彩网</strong></div>
+          </aside>
+        </header>
+        <section class="lottery-grid">
+            <a class="lottery-card" href="ssq.html">
+              <span class="lottery-top"><strong>双色球</strong><small>中国福彩网</small></span>
+              <span class="balls"><span class="ball warm">02</span><span class="ball warm">05</span><span class="ball warm">14</span><span class="ball warm">25</span><span class="ball warm">30</span><span class="ball warm">32</span><span class="ball cool">05</span></span>
+              <span class="lottery-meta">已同步到 2026-07-28 第 26086 期<br>每周二、四、日开奖</span>
+            </a>
+            
+            <a class="lottery-card" href="dlt.html">
+              <span class="lottery-top"><strong>大乐透</strong><small>中国体彩网</small></span>
+              <span class="balls"><span class="ball warm">13</span><span class="ball warm">25</span><span class="ball warm">30</span><span class="ball warm">32</span><span class="ball warm">33</span><span class="ball cool">04</span><span class="ball cool">05</span></span>
+              <span class="lottery-meta">已同步到 2026-07-27 第 26084 期<br>每周一、三、六开奖</span>
+            </a>
+            
+            <a class="lottery-card" href="fc3d.html">
+              <span class="lottery-top"><strong>福彩3D</strong><small>中国福彩网</small></span>
+              <span class="balls"><span class="ball neutral">05</span><span class="ball neutral">09</span><span class="ball neutral">01</span></span>
+              <span class="lottery-meta">已同步到 2026-07-28 第 26199 期<br>每天开奖</span>
+            </a>
+            
+            <a class="lottery-card" href="pl3.html">
+              <span class="lottery-top"><strong>排列3</strong><small>中国体彩网</small></span>
+              <span class="balls"><span class="ball neutral">03</span><span class="ball neutral">00</span><span class="ball neutral">05</span></span>
+              <span class="lottery-meta">已同步到 2026-07-28 第 26199 期<br>每天开奖</span>
+            </a>
+            
+            <a class="lottery-card" href="pl5.html">
+              <span class="lottery-top"><strong>排列5</strong><small>中国体彩网</small></span>
+              <span class="balls"><span class="ball neutral">03</span><span class="ball neutral">00</span><span class="ball neutral">05</span><span class="ball neutral">00</span><span class="ball neutral">07</span></span>
+              <span class="lottery-meta">已同步到 2026-07-28 第 26199 期<br>每天开奖</span>
+            </a>
+            
+            <a class="lottery-card" href="qxc.html">
+              <span class="lottery-top"><strong>七星彩</strong><small>中国体彩网</small></span>
+              <span class="balls"><span class="ball neutral">09</span><span class="ball neutral">07</span><span class="ball neutral">01</span><span class="ball neutral">00</span><span class="ball neutral">03</span><span class="ball neutral">04</span><span class="ball neutral">00</span></span>
+              <span class="lottery-meta">已同步到 2026-07-28 第 26086 期<br>每周二、五、日开奖</span>
+            </a>
+            
+            <a class="lottery-card" href="qlc.html">
+              <span class="lottery-top"><strong>七乐彩</strong><small>中国福彩网</small></span>
+              <span class="balls"><span class="ball warm">10</span><span class="ball warm">14</span><span class="ball warm">15</span><span class="ball warm">24</span><span class="ball warm">27</span><span class="ball warm">29</span><span class="ball warm">30</span><span class="ball cool">19</span></span>
+              <span class="lottery-meta">已同步到 2026-07-27 第 26085 期<br>每周一、三、五开奖</span>
+            </a>
+            </section>
+        <section class="notice">
+          <strong>权威免责声明</strong>
+          <p>本工具仅基于公开开奖数据进行整理、查询、核验和统计展示，不销售彩票，不提供代购服务，不构成任何中奖承诺或投资建议。开奖结果以中国福彩网、中国体彩网等官方发布为准，请理性购彩。</p>
+        </section>
+        <script>
+          const SEARCH_INDEX = [{"id": "ssq", "name": "双色球", "url": "ssq.html"}, {"id": "dlt", "name": "大乐透", "url": "dlt.html"}, {"id": "fc3d", "name": "福彩3D", "url": "fc3d.html"}, {"id": "pl3", "name": "排列3", "url": "pl3.html"}, {"id": "pl5", "name": "排列5", "url": "pl5.html"}, {"id": "qxc", "name": "七星彩", "url": "qxc.html"}, {"id": "qlc", "name": "七乐彩", "url": "qlc.html"}];
+          function goSearch() {
+            const raw = document.getElementById("homeSearch").value.trim().toLowerCase();
+            const match = SEARCH_INDEX.find(item => raw.includes(String(item.name).toLowerCase()) || String(item.name).toLowerCase().includes(raw));
+            window.location.href = match ? match.url : "ssq.html";
+          }
+          document.getElementById("homeSearchBtn").addEventListener("click", goSearch);
+          document.getElementById("homeSearch").addEventListener("keydown", event => { if (event.key === "Enter") goSearch(); });
+        </script>
+        </div>
+</body>
+</html>
