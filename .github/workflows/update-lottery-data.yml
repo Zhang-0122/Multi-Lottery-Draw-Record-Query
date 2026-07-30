@@ -15,6 +15,7 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -25,18 +26,18 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: python -m pip install -r double/requirements.txt
+        run: python -m pip install -r requirements.txt
 
       - name: Fetch official lottery data
         working-directory: double
-        run: python fetch_data.py
+        run: python -u fetch_data.py
 
       - name: Build standalone dashboard
         working-directory: double
-        run: python build_dashboard.py
+        run: python -u build_dashboard.py
 
       - name: Sync release page
-        run: python scripts/sync_release.py
+        run: python -u scripts/sync_release.py
 
       - name: Commit updated data and page
         run: |

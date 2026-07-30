@@ -1,5 +1,7 @@
 ﻿# 彩迹星图｜多彩种开奖记录查询与可视化核验工具
 
+> **在线体验地址**：[https://fanciful-unicorn-343425.netlify.app](https://fanciful-unicorn-343425.netlify.app)
+
 ![界面预览](docs/interface-preview.png)
 
 **彩迹星图** 是一款面向普通用户的多彩种彩票开奖记录查询、历史走势观察和开奖后号码核验工具。项目采用静态网页发布，打开网址即可使用；数据同步、页面生成和发布流程可以通过 GitHub Actions 自动完成，适合部署到 Netlify、GitHub Pages、Gitee Pages 等平台。

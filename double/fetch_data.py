@@ -30,31 +30,31 @@ EXTRA_LOTTERIES = {
     "fc3d": {
         "label": "福彩3D",
         "out": os.path.join(DIR, "fc3d_data.json"),
-        "fetch": lambda: fetch_cwl_digit_history("3d", 3, issue_count=10000),
+        "fetch": lambda: fetch_cwl_digit_history("3d", 3, issue_count=300),
         "validate": lambda record: validate_digit_record(record, 3),
     },
     "pl3": {
         "label": "排列3",
         "out": os.path.join(DIR, "pl3_data.json"),
-        "fetch": lambda: fetch_sporttery_digit_history("35", 3, max_pages=100),
+        "fetch": lambda: fetch_sporttery_digit_history("35", 3, max_pages=5),
         "validate": lambda record: validate_digit_record(record, 3),
     },
     "pl5": {
         "label": "排列5",
         "out": os.path.join(DIR, "pl5_data.json"),
-        "fetch": lambda: fetch_sporttery_digit_history("350133", 5, max_pages=100),
+        "fetch": lambda: fetch_sporttery_digit_history("350133", 5, max_pages=5),
         "validate": lambda record: validate_digit_record(record, 5),
     },
     "qxc": {
         "label": "七星彩",
         "out": os.path.join(DIR, "qxc_data.json"),
-        "fetch": lambda: fetch_sporttery_digit_history("04", 7, max_pages=100),
+        "fetch": lambda: fetch_sporttery_digit_history("04", 7, max_pages=5),
         "validate": lambda record: validate_digit_record(record, 7),
     },
     "qlc": {
         "label": "七乐彩",
         "out": os.path.join(DIR, "qlc_data.json"),
-        "fetch": lambda: fetch_qlc_history(issue_count=10000),
+        "fetch": lambda: fetch_qlc_history(issue_count=300),
         "validate": validate_qlc_record,
     },
 }
@@ -187,11 +187,15 @@ def save_records(records):
 def sync_dlt():
     print("[DLT] sporttery.cn ...", end=" ")
     try:
-        fetched = fetch_dlt_history()
+        fetched = fetch_dlt_history(max_pages=5)
         valid = [record for record in fetched if validate_dlt_record(record)]
         if not valid:
             raise RuntimeError("大乐透官方接口没有返回有效记录")
         existing = load_json_records(DLT_OUT)
+        if existing:
+            merged_by_issue = {record["Issue"]: record for record in existing}
+            merged_by_issue.update({record["Issue"]: record for record in valid})
+            valid = list(merged_by_issue.values())
         if existing:
             current_latest = sorted(existing, key=lambda item: item["Date"])[-1]
             fetched_latest = sorted(valid, key=lambda item: item["Date"])[-1]
@@ -226,6 +230,10 @@ def sync_extra_lottery(key, info):
         if not valid:
             raise RuntimeError(f"{label} 官方接口没有返回有效记录")
         existing = load_json_records(out)
+        if existing:
+            merged_by_issue = {record["Issue"]: record for record in existing}
+            merged_by_issue.update({record["Issue"]: record for record in valid})
+            valid = list(merged_by_issue.values())
         if existing:
             current_latest = sorted(existing, key=lambda item: item["Date"])[-1]
             fetched_latest = sorted(valid, key=lambda item: item["Date"])[-1]
